@@ -6,7 +6,7 @@ AddEventHandler('simcard:useSimCard', function()
         local newPhoneNumber = tonumber(data.value)
 
         if newPhoneNumber == nil or newPhoneNumber < 10000 or newPhoneNumber > 90000000 then
-            ESX.ShowNotification("Ditt nummer vara mellan 10000 och 90000000.")
+            ESX.ShowNotification("Ditt nummer måste vara mellan 10000 och 90000000.")
         else
             menu.close()
             TriggerServerEvent('simcard:updatePhoneNumber', newPhoneNumber)
